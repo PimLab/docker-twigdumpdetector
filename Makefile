@@ -6,7 +6,7 @@ REPO_NAME = "pimlab/twigdumpdetector"
 all: build test tag
 
 build:
-	@docker image rm -f twigdumpdetector:$(VERSION_TAG); \
+	@docker image rm -f $(REPO_NAME):$(VERSION_TAG) twigdumpdetector:$(VERSION_TAG); \
 	docker build --rm --tag twigdumpdetector:$(VERSION_TAG) ./ ; \
 
 test:
